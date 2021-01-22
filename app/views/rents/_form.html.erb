@@ -36,6 +36,25 @@
     <%= form.text_area :other %>
   </div>
 
+  <hr>
+
+  <%= form.fields_for :stations, @rent.stations do |s| %>
+    <div class="field">
+      <%= s.label :line %>
+      <%= s.text_field :line %>
+    </div>
+
+    <div class="field">
+      <%= s.label :name %>
+      <%= s.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= s.label :time %>
+      <%= s.number_field :time %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
