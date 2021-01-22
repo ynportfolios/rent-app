@@ -39,6 +39,7 @@
   <hr>
 
   <%= form.fields_for :stations, @rent.stations do |s| %>
+    <h3>最寄り駅<%= 1 + s.index.to_i %></h3>
     <div class="field">
       <%= s.label :line %>
       <%= s.text_field :line %>
