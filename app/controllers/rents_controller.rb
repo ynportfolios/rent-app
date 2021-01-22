@@ -20,6 +20,16 @@ class RentsController < ApplicationController
 
   # GET /rents/1/edit
   def edit
+    stations = Station.where(rent_id: @rent.id)
+    flg = 0
+    for station in stations do
+      if !(station.line == "" && station.name == "" && !station.time)
+        flg += 1
+      end
+    end
+    if stations.length == flg
+      @rent.stations.build
+    end
   end
 
   # POST /rents
