@@ -39,7 +39,7 @@ class RentsController < ApplicationController
 
     respond_to do |format|
       if @rent.save
-        format.html { redirect_to @rent, notice: 'Rent was successfully created.' }
+        format.html { redirect_to @rent, notice: '物件情報を登録しました！' }
         format.json { render :show, status: :created, location: @rent }
       else
         format.html { render :new }
@@ -53,7 +53,7 @@ class RentsController < ApplicationController
   def update
     respond_to do |format|
       if @rent.update(rent_params)
-        format.html { redirect_to @rent, notice: 'Rent was successfully updated.' }
+        format.html { redirect_to @rent, notice: '物件情報を編集しました！' }
         format.json { render :show, status: :ok, location: @rent }
       else
         format.html { render :edit }
@@ -67,7 +67,7 @@ class RentsController < ApplicationController
   def destroy
     @rent.destroy
     respond_to do |format|
-      format.html { redirect_to rents_url, notice: 'Rent was successfully destroyed.' }
+      format.html { redirect_to rents_url, notice: '物件情報を削除しました！' }
       format.json { head :no_content }
     end
   end
